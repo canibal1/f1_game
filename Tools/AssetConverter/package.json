@@ -1,0 +1,13 @@
+{
+  "name": "monoposto-asset-converter",
+  "private": true,
+  "type": "module",
+  "description": "Converts CC0 glTF/GLB models into the MPK1 mesh-pack format loaded by MeshPack.cs",
+  "dependencies": {
+    "@gltf-transform/core": "^4.0.0",
+    "@gltf-transform/extensions": "^4.0.0",
+    "@gltf-transform/functions": "^4.0.0",
+    "meshoptimizer": "^0.21.0",
+    "pngjs": "^7.0.0"
+  }
+}

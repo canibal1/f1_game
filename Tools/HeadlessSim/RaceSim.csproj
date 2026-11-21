@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Runs the real race logic (CarController, AIDriver, RaceManager, TrackData...) without Unity,
+       using a small managed stand-in for UnityEngine (EngineShim.cs / UnityShim.cs). -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <LangVersion>9.0</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <NoWarn>CS0649;CS0414;CS8981;CS0660;CS0661;CS0108;CS0169</NoWarn>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="EngineShim.cs;UnityShim.cs;GameStubs.cs;Program.cs" />
+    <Compile Include="../../Assets/Scripts/Util/Compat.cs" />
+    <Compile Include="../../Assets/Scripts/Util/GameInput.cs" />
+    <Compile Include="../../Assets/Scripts/Core/GameData.cs" />
+    <Compile Include="../../Assets/Scripts/Core/GameSettings.cs" />
+    <Compile Include="../../Assets/Scripts/Vehicle/Tyres.cs" />
+    <Compile Include="../../Assets/Scripts/Vehicle/CarSetup.cs" />
+    <Compile Include="../../Assets/Scripts/Vehicle/VehicleSpec.cs" />
+    <Compile Include="../../Assets/Scripts/Vehicle/CarController.cs" />
+    <Compile Include="../../Assets/Scripts/Track/TrackData.cs" />
+    <Compile Include="../../Assets/Scripts/Race/*.cs" Exclude="../../Assets/Scripts/Race/RacingLineDisplay.cs" />
+  </ItemGroup>
+</Project>
